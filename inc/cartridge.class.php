@@ -672,7 +672,7 @@ class Cartridge extends CommonDBChild {
                              'Infocom'.MassiveAction::CLASS_ACTION_SEPARATOR.'activate'
                                      => __('Enable the financial and administrative information')
                              ];
-            if ($show_old) {
+            if (!$show_old) {
                $actions['Cartridge'.MassiveAction::CLASS_ACTION_SEPARATOR.'backtostock']
                      = __('Back to stock');
             }
@@ -683,7 +683,7 @@ class Cartridge extends CommonDBChild {
             Html::showMassiveActions($massiveactionparams);
          }
          echo "<table class='tab_cadre_fixehov'>";
-         if (!$show_old) {
+         if ($show_old) {
             echo "<tr class='noHover'><th colspan='".($canedit?'7':'6')."'>".
                   self::getCount($tID, -1)."</th>";
             echo "</tr>";
