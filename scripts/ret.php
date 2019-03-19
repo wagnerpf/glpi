@@ -1,26 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<!--
-* ToDo: (eu sei q ta aparecendo no formulario, é so pra n esquecer e_e')
-* Nome do campus, tirar essa informação da entidade em que a pessoa solicitou (não faço ideia de onde encontrar isso)
-* Não consegui fazer comparação com os dados do $Row[] ...
--->
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "123456";
-$dbname = "glpi";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-} 
-?>
-
+<!-- NAO CONSIGO SETA OS TEXTOS PUXADOS DO SQL PARA UTF-8 (por isso que aparece as interrogações) -->
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>sum&aacute;rio executivo Cerne 2018</title>
 	<meta name="generator" content="LibreOffice 6.0.5.2 (Windows)"/>
 	<meta name="author" content="Luciano Vale"/>
@@ -92,6 +74,11 @@ DADOS CADASTRAIS</b></font></font></font></p>
 <br/>
 
 </p>
+<?php
+    $entidade = 'Itapina';
+    $dataIni = '2019/01/28';
+    $dataFim = '2019/05/30';
+?>
 <table width="604" cellpadding="4" cellspacing="0">
 	<col width="162">
 	<col width="143">
@@ -111,7 +98,7 @@ DADOS CADASTRAIS</b></font></font></font></p>
                             <font face="Arial, sans-serif">
                                 <font size="4" style="font-size: 16pt">
                                     <b>
-                                    ##nome do campus##
+                                    <?php echo " ".$entidade." ";?>
                                     </b>
                                 </font>
                             </font>
@@ -121,186 +108,182 @@ DADOS CADASTRAIS</b></font></font></font></p>
 	</tr>
         
     <?php
-        $sqlGNI = "
-        SELECT glpi_users.firstname as nome,
-        glpi_users.realname as sobrenome,
-        glpi_plugin_fields_userusuariodadospessoais.cpffield as CPF ,
-        glpi_plugin_fields_userusuariodadospessoais.siapefield as Siape,
-        glpi_useremails.email as email,
-        glpi_users.phone as telefone, 
-        glpi_entities.name as nucleo
-        FROM glpi_users
-        INNER JOIN glpi_plugin_fields_userusuariodadospessoais ON (glpi_plugin_fields_userusuariodadospessoais.items_id = glpi_users.id)
-        INNER JOIN glpi_useremails ON (glpi_useremails.users_id = glpi_users.id)
-        INNER JOIN glpi_usertitles ON (glpi_usertitles.id = glpi_users.usertitles_id)
-        INNER JOIN glpi_entities ON (glpi_entities.id = glpi_users.entities_id)
-        WHERE glpi_useremails.is_default = 1 and glpi_usertitles.name = 'gestor do NI'
-        ";
+        $servername = "localhost";
+        $username = "root";
+        $password = "123456";
+        $dbname = "glpi";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+        } 
 
-        $result = $conn->query($sqlGNI);
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-    ?>
-                
-                <tr>
-                        <td rowspan="5" width="162" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-                                <p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
-                                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
-                                Dados do
-                                </b></font></font></font>
-                                </p>
-                                <p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
-                                Gestor do NI
-                                </b></font></font></font></p>
-                        </td>
-                        <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-                                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Nome:</b></font></font></font></p>
-                        </td>
-                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-                                <p style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
-                                <?php echo " ".$row["nome"]." ".$row["sobrenome"]." "  ## nome do gestor do NI ## ?>
-                                </b></font></font></font></p>
-                        </td>
-                </tr>
-                <tr>
-                        <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">CPF:</font></font></font></p>
-                        </td>
-                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                                <p style="margin-top: 0.1cm; font-variant: normal; font-weight: normal">
-                                <font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
-                                <?php echo " ".$row["CPF"]." " ##CPF do gestor do NI## ?>
-                                </font></font></font></p>
-                        </td>
-                </tr>
-                <tr>
-                        <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Siape:</font></font></font></p>
-                        </td>
-                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                                <p style="margin-top: 0.05cm; font-variant: normal; font-weight: normal">
-                                <font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
-                                <?php echo " ".$row["Siape"]." " ##Siape	do gestor do NI## ?>
-                                </font></font></font></p>
-                        </td>
-                </tr>
-                <tr>
-                        <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">E-mail:</font></font></font></p>
-                        </td>
-                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                                <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                                <?php echo " ".$row["email"]." " ##Email do bolsista##?>
-                                </span></font></font></font></p>
-                        </td>
-                </tr>
-                <tr>
-                        <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Telefone:</font></font></font></p>
-                        </td>
-                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                                <p style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                                <?php echo " ".$row["telefone"]." " ##telefone do gestor do NI## ?>
-                                </font></font></font></p>
-                        </td>
-                </tr>
-    <?php		 
-            }
-        }
-    ?>
-    <?php
-        $sqlBolsista = "
+        $sqlParticipantes = "
         SELECT glpi_users.firstname as nome,
         glpi_users.realname as sobrenome,
         glpi_plugin_fields_userusuariodadospessoais.cpffield as CPF ,
         glpi_useremails.email as email,
         glpi_users.phone as telefone, 
         glpi_entities.name as nucleo,
-        glpi_usertitles.name as titulo
+        glpi_usertitles.name as titulo,
+        glpi_plugin_fields_userusuariodadospessoais.siapefield as Siape,
+        glpi_entities.comment as meioInova /* para responder o publico Alvo*/
         FROM glpi_users
         INNER JOIN glpi_plugin_fields_userusuariodadospessoais ON (glpi_plugin_fields_userusuariodadospessoais.items_id = glpi_users.id)
         INNER JOIN glpi_useremails ON (glpi_useremails.users_id = glpi_users.id)
         INNER JOIN glpi_usertitles ON (glpi_usertitles.id = glpi_users.usertitles_id)
         INNER JOIN glpi_entities ON (glpi_entities.id = glpi_users.entities_id)
-        WHERE glpi_useremails.is_default = 1 
-        and glpi_usertitles.name != 'gestor do NI'
-        and glpi_entities.name = 'Itapina'
-        ORDER by titulo
+        WHERE glpi_useremails.is_default = 1 and
+            glpi_entities.name = '$entidade'
+        ORDER by titulo != 'Gestor do NI', titulo
         ";
 
-        $result = $conn->query($sqlBolsista);
+        $result = $conn->query($sqlParticipantes);
         if ($result->num_rows > 0) {
             // output data of each row
-            while($row = $result->fetch_assoc()){ 
-    ?>        
-	<tr>
-            <td rowspan="4" width="162" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                    <p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
-                    <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
-                    Dados do 
-                    <?php echo " ".$row["titulo"]." "?> 
-                    </b></font></font></font>
-                    </p>
-
-            </td>
-            <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                    <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Nome:</b></font></font></font></p>
-            </td>
-            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                    <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
-                    <?php echo " ".$row["nome"]." ".$row["sobrenome"]." " ##Nome do bolsista## ?>
-                    </b></font></font></font></p>
-            </td>
-	</tr>
-        <tr>
-            <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">CPF:</font></font></font></p>
-            </td>
-            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                <?php echo " ".$row["CPF"]." " ## CPF do bolsista ##?>
-                </font></font></font></p>
-            </td>
-	</tr>
-	<tr>
-            <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">E-mail:</font></font></font></p>
-            </td>
-            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                <?php echo " ".$row["email"]." " ##Email do bolsista##?>
-                </span></font></font></font></p>
-            </td>
-	</tr>
-	<tr>
-            <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
-                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
-                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Telefone:</font></font></font></p>
-            </td>
-            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
-                <p align="left" style="margin-top: 0.05cm"><font color="#000000">
-                <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                <?php echo " ".$row["telefone"]." " ##Telefone do bolsista ##?>
-                </span></font></font></font></p>
-            </td>
-	</tr>
-        
-        
-        
-    <?php
-            }
-        }
+            while($row = $result->fetch_assoc()) {
+                $meioInova = $row["meioInova"]; //vai ser usado na seção "Público Alvo" estou pegando aqui para evitar outra conexão
+		$titulo = $row["titulo"];
+                if ($titulo == "Gestor do NI"){
     ?>
-    
+                    <tr>
+                            <td rowspan="5" width="162" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+                                    <p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
+                                    <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
+                                    Dados do
+                                    </b></font></font></font>
+                                    </p>
+                                    <p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
+                                    Gestor do NI
+                                    </b></font></font></font></p>
+                            </td>
+                            <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+                                    <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Nome:</b></font></font></font></p>
+                            </td>
+                            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+                                    <p style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
+                                    <?php echo " ".$row["nome"]." ".$row["sobrenome"]." ";  ## nome do gestor do NI ## ?>
+                                    </b></font></font></font></p>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                                    <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                                    <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">CPF:</font></font></font></p>
+                            </td>
+                            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                                    <p style="margin-top: 0.1cm; font-variant: normal; font-weight: normal">
+                                    <font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+                                    <?php echo " ".$row["CPF"]." "; ##CPF do gestor do NI## ?>
+                                    </font></font></font></p>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                                    <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                                    <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Siape:</font></font></font></p>
+                            </td>
+                            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                                    <p style="margin-top: 0.05cm; font-variant: normal; font-weight: normal">
+                                    <font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+                                    <?php echo " ".$row["Siape"]." "; ##Siape	do gestor do NI## ?>
+                                    </font></font></font></p>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                                    <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                                    <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">E-mail:</font></font></font></p>
+                            </td>
+                            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                                    <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
+                                    <?php echo " ".$row["email"]." "; ##Email do bolsista##?>
+                                    </span></font></font></font></p>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td width="143" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                                    <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                                    <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Telefone:</font></font></font></p>
+                            </td>
+                            <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                                    <p style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
+                                    <?php echo " ".$row["telefone"]." "; ##telefone do gestor do NI## ?>
+                                    </font></font></font></p>
+                            </td>
+                    </tr>
+    <?php
+                }else{
+    ?>
+                    <tr>
+                        <td rowspan="4" width="162" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                                <p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
+                                <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
+                                Dados do 
+                                <?php echo " ".$row["titulo"]." ";?> 
+                                </b></font></font></font>
+                                </p>
+
+                        </td>
+                        <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                                <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Nome:</b></font></font></font></p>
+                        </td>
+                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                                <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
+                                <?php echo " ".$row["nome"]." ".$row["sobrenome"]." "; ##Nome do bolsista## ?>
+                                </b></font></font></font></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                            <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                            <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">CPF:</font></font></font></p>
+                        </td>
+                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                            <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
+                            <?php echo " ".$row["CPF"]." "; ## CPF do bolsista ##?>
+                            </font></font></font></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                            <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                            <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">E-mail:</font></font></font></p>
+                        </td>
+                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                            <p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
+                            <?php echo " ".$row["email"]." "; ##Email do bolsista##?>
+                            </span></font></font></font></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding: 0cm">
+                            <p align="right" style="margin-right: 0.1cm; margin-top: 0.05cm; font-weight: normal">
+                            <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Telefone:</font></font></font></p>
+                        </td>
+                        <td width="274" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
+                            <p align="left" style="margin-top: 0.05cm"><font color="#000000">
+                            <font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
+                            <?php echo " ".$row["telefone"]." "; ##Telefone do bolsista ##?>
+                            </span></font></font></font></p>
+                        </td>
+                    </tr>
+                
+    <?php	
+                }
+            }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
         
+        $matriz = bufferSelect();
         
+    ?>
+                    
+                    
 </table>
 <p style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
 <br/>
@@ -316,8 +299,7 @@ DADOS CADASTRAIS</b></font></font></font></p>
 <font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>II.
 A&Ccedil;&Otilde;ES SENSIBILIZA&Ccedil;&Atilde;O E PROSPEC&Ccedil;&Atilde;O</b></font></font></font></p>
 <p style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
-<br/>
-<br/>
+
 
 </p>
 <p style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
@@ -333,51 +315,21 @@ A&Ccedil;&Otilde;ES SENSIBILIZA&Ccedil;&Atilde;O E PROSPEC&Ccedil;&Atilde;O</b><
 		</td>
 	</tr>
 	<tr>
-		<td width="594" height="131" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
 			<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>A&Ccedil;&Otilde;ES
 			REALIZADAS: </b></font></font>
 			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
-			<font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">(Qual
-			sensibiliza&ccedil;&atilde;o foi realizada </span></font></font><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">para
-			</span></font></font><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">Ampliar
-			a quantidade e a qualidade das propostas apresentadas &agrave;
-			incubadora?)</span></font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
+                        <p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
+                        <font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">
+                        
+                        <?php findAnswer(646); /*Ações Realizadas Sensibilização*/ ?>
 
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
-			<font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">#</span></font></font><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">#Sensibiliza&ccedil;&otilde;es
-			realizadas</span></font></font><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">##</span></font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; font-weight: normal">
-			<br/>
-
-			</p>
-		</td>
-	</tr>
+                        </span></font>
+                        </font>
+                        </p>
+                </td>
+        </tr>
 </table>
 <table width="604" cellpadding="4" cellspacing="0" style="page-break-before: auto; page-break-after: auto">
 	<col width="594">
@@ -387,48 +339,19 @@ A&Ccedil;&Otilde;ES SENSIBILIZA&Ccedil;&Atilde;O E PROSPEC&Ccedil;&Atilde;O</b><
 		</td>
 	</tr>
 	<tr>
-		<td width="594" height="150" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
 			<font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>A&Ccedil;&Otilde;ES
 			REALIZADAS: </b></font></font>
 			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">(Qual
-			sensibiliza&ccedil;&atilde;o foi realizada?)</font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
+                        
+                        <p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
+                        <font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">
 
-			</p>
-			<ul>
-				<li/>
-<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-				<font color="#000000"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">A
-				equipe de gest&atilde;o pode buscar pesquisas, tecnologias e
-				prot&oacute;tipos que tenham potencial para serem transformados
-				em neg&oacute;cios de sucesso. </font></font></font>
-				</p>
-				<li/>
-<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; text-decoration: none">
-				<font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Pelo
-				lado da demanda, a equipe de gest&atilde;o pode buscar gargalos
-				tecnol&oacute;gicos de empresas ou demandas da sociedade que
-				possam ser atendidas por meio da gera&ccedil;&atilde;o de novos
-				empreendimentos </font></font>
-				</p>
-			</ul>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
+                        <?php findAnswer(647); /*Ações Realizadas Prospecção*/?>
 
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">##Prospec&ccedil;&otilde;es
-			realizadas##</font></font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; font-weight: normal">
-			<br/>
+                        </span></font></font></p>
 
-			</p>
 		</td>
 	</tr>
 </table>
@@ -436,203 +359,20 @@ A&Ccedil;&Otilde;ES SENSIBILIZA&Ccedil;&Atilde;O E PROSPEC&Ccedil;&Atilde;O</b><
 	<col width="594">
 	<tr>
 		<td width="594" valign="top" bgcolor="#dddddd" style="background: #dddddd" style="border: 1px solid #000000; padding: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>P&uacute;blico
-			Alvo</b></font></font></font></p>
+			<p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>
+                            P&uacute;blico Alvo
+                        </b></font></font></font></p>
 		</td>
 	</tr>
 	<tr>
-		<td width="594" height="278" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="justify" style="font-weight: normal"><br/>
-<br/>
-
-			</p>
-			<p align="justify" style="font-weight: normal"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Setores
-			estrat&eacute;gicos para desenvolvimento da regi&atilde;o por meio
-			de inova&ccedil;&atilde;o e perfil dos empreendimentos e
-			empreendedores que interessam a incubadora: </font></font>
-			</p>
-			<p align="justify" style="font-weight: normal"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">##
-			Setores estrategico do nucleo incubador</font></font></p>
-			<table width="582" cellpadding="4" cellspacing="0">
-				<col width="14">
-				<col width="241">
-				<col width="19">
-				<col width="274">
-				<tr valign="top">
-					<td width="14" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Tecnologia
-						da Informa&ccedil;&atilde;o e da Comunica&ccedil;&atilde;o
-						(TIC)</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border: 1px solid #000000; padding: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Biotecnologia
-						</b></font></font>
-						</p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Automa&ccedil;&atilde;o</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Agroneg&oacute;cio</b></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Eletroeletr&ocirc;nica</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Materiais</b></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Nanotecnologia</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Ecologia
-						e Meio Ambiente</b></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Energia</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Qu&iacute;mica</b></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Metalmec&acirc;nica</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>F&iacute;sica</b></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Inform&aacute;tica</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Tecnologias
-						Educacionais</b></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="241" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Tecnologia
-						Assistiva</b></font></font></p>
-					</td>
-					<td width="19" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="274" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="font-style: normal; text-decoration: none">
-						<font face="Liberation Serif, serif"><font size="1" style="font-size: 8pt"><b>Outros:</b></font></font></p>
-					</td>
-				</tr>
-			</table>
-			<p align="left" style="margin-bottom: 0cm"><br/>
-
-			</p>
-			<p align="left" style="margin-bottom: 0cm"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>##</b></font></font></p>
+		<td style="text-align: center; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		
+                <?php echo " ".$meioInova." "; ?>
+	
 		</td>
 	</tr>
 </table>
+
 <table width="604" cellpadding="4" cellspacing="0" style="background: transparent; page-break-before: auto; page-break-after: auto; page-break-inside: auto">
 	<col width="594">
 	<tr style="background: transparent">
@@ -739,6 +479,7 @@ A&Ccedil;&Otilde;ES SENSIBILIZA&Ccedil;&Atilde;O E PROSPEC&Ccedil;&Atilde;O</b><
 		</td>
 	</tr>
 </table>
+
 <p style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
 <br/>
 <br/>
@@ -761,25 +502,13 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 		</td>
 	</tr>
 	<tr>
-		<td width="594" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">O
-			gestor precisa definir como &eacute; realizada a qualifica&ccedil;&atilde;o
-			dos potenciais empreendedores para apresenta&ccedil;&atilde;o de
-			propostas de empreendimentos inovadores &agrave; <b>incubadora</b>.
+			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
+                        
+                        <?php findAnswer(648); /*Ações para Qualificação dos Potenciais Empreendedores*/?>
+                                    
 			</font></font></font>
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Exemplos:</font></font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Cursos
-			de modelos de neg&oacute;cios (Compet&ecirc;ncias empreendedoras);</font></font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Palestra
-			com parceiros (Sebrae, Bandes);</font></font></font></p>
-			<p align="justify" style="margin-top: 0.05cm; font-weight: normal">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Encontros
-			de Orienta&ccedil;&otilde;es;</font></font></font></p>
 		</td>
 	</tr>
 </table>
@@ -793,84 +522,14 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 		</td>
 	</tr>
 	<tr>
-		<td width="594" height="199" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm; background: transparent">
-			<br/>
-<br/>
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p align="justify" style=" margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
+			<font color="#000000" face="Arial, sans-serif" size="2" style="font-size: 9pt">
+<!-- tentei alinhar a resposta mas ele bugava metade da leitura -->
+			<?php findAnswer(493); /*Competencias Empreendedoras*/?>
+                            
+			</font>
 
-			</p>
-			<table width="582" cellpadding="4" cellspacing="0">
-				<col width="17">
-				<col width="301">
-				<col width="26">
-				<col width="26">
-				<col width="133">
-				<col width="29">
-				<tr>
-					<td width="17" height="93" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-right: 0.2cm; margin-top: 0.49cm">
-						<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><b>M&oacute;dulo/Per&iacute;odo</b></font></font></font></p>
-					</td>
-					<td width="301" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-top: 0.49cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><b>Disciplinas</b></font></font></font></p>
-					</td>
-					<td width="26" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-left: 0.2cm; margin-right: 0.2cm; margin-top: 0.49cm">
-						<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><b>Presencial</b></font></font></font></p>
-					</td>
-					<td width="26" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-left: 0.2cm; margin-right: 0.2cm; margin-top: 0.49cm">
-						<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><b>A
-						Distancia </b></font></font></font>
-						</p>
-					</td>
-					<td width="133" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-top: 0.49cm; margin-bottom: 0.21cm"><a name="_GoBack"></a>
-						<font size="2" style="font-size: 9pt"><b><font color="#000000"><font face="Arial, serif">Professo</font></font><font color="#000000"><font face="Arial, serif">r</font></font></b></font></p>
-						<p align="center" style="margin-top: 0.49cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><b>Tutor</b></font></font></font></p>
-					</td>
-					<td width="29" style="border: 1px solid #000000; padding: 0.1cm">
-						<p align="center" style="margin-left: 0.2cm; margin-right: 0.2cm; margin-top: 0.49cm">
-						<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt"><b>Carga
-						Hor&aacute;ria</b></font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="17" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><br/>
-
-						</p>
-					</td>
-					<td width="301" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><br/>
-
-						</p>
-						<p><br/>
-
-						</p>
-					</td>
-					<td width="26" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><br/>
-
-						</p>
-					</td>
-					<td width="26" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><br/>
-
-						</p>
-					</td>
-					<td width="133" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><br/>
-
-						</p>
-					</td>
-					<td width="29" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="center"><br/>
-
-						</p>
-					</td>
-				</tr>
-			</table>
 		</td>
 	</tr>
 </table>
@@ -883,10 +542,11 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 		</td>
 	</tr>
 	<tr>
-		<td width="594" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="center" style="margin-top: 0.05cm; font-weight: normal; background: transparent">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Exemplo:
-			Mensal, Trimestral, Semestral</font></font></font></p>
+			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
+                        <?php findAnswer(494); /*Periodicidade do Processo de Seleção*/?>
+                        </font></font></font></p>
 		</td>
 	</tr>
 	<tr>
@@ -896,10 +556,10 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 		</td>
 	</tr>
 	<tr>
-		<td width="594" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Quantidades
-			de vagas ofertadas para a capacita&ccedil;&atilde;o (Compet&ecirc;ncias
-			Empreendedoras)</font></font></font></p>
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
+                        <?php findAnswer(495); /*Vagas Ofertadas*/?>
+                        </font></font></font></p>
 		</td>
 	</tr>
 	<tr>
@@ -909,15 +569,11 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 		</td>
 	</tr>
 	<tr>
-		<td width="594" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">Como
-			ser&aacute; avaliado o curso de compet&ecirc;ncias empreendedoras,
-			valor de corte para prova ou apresenta&ccedil;&atilde;o&hellip;.</font></font></font></p>
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			
+			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
+                        <?php findAnswer(496); /*Critérios de Avaliação*/?> 
+                        </font></font></font></p>
 		</td>
 	</tr>
 </table>
@@ -951,16 +607,14 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 				</tr>
 				<tr valign="top">
 					<td width="278" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><br/>
-
+						<p align="center">
+                                                <?php findAnswer(497); /*Nº de Projetos/Propostas Recebidas*/?>
 						</p>
-						<p align="center"><br/>
 
-						</p>
 					</td>
 					<td width="282" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="center"><br/>
-
+						<p align="center">
+                                                <?php findAnswer(498); /*Nº de Projetos/Propostas Selecionadas (Qualificadas)*/?>
 						</p>
 					</td>
 				</tr>
@@ -1083,33 +737,24 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES REALIZADAS</b></font></f
 	<tr>
 		<td width="595" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
-			<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>EFIC&Aacute;CIA
-			DAS A&Ccedil;&Otilde;ES:</b></font></font></font></p>
-			<p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">(Compara&ccedil;&atilde;o
-			entre o que se pretendia fazer e o que efetivamente se conseguiu) </font></font></font>
+			<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>
+                        EFIC&Aacute;CIA	DAS A&Ccedil;&Otilde;ES:
+                        </b></font></font></font></p>
+			<p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">
+                        <?php findAnswer(392); /* Eficácia das Ações */?>
+                        </font></font></font>
 			</p>
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
 			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
 
 			</p>
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
 			<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>EFICI&Ecirc;NCIA
 			DAS A&Ccedil;&Otilde;ES:</b></font></font></font></p>
-			<p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">(Rela&ccedil;&atilde;o
-			entre os resultados que se conseguiu alcan&ccedil;ar e os recursos
-			empregados, recursos alcan&ccedil;ados/recursos utilizados)</font></font></font></p>
+			<p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">
+                        <?php findAnswer(393); /* Eficiência das Ações */?>
+                        </font></font></font></p>
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; font-weight: normal">
 			<br/>
 
 			</p>
@@ -1127,9 +772,10 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES REALIZADAS</b></font></f
 	</tr>
 	<tr>
 		<td width="595" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
-			<br/>
-<br/>
+			
+                        <p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">
+			<?php findAnswer(394); /* Necessidade de Mudança nas Ações */?>
+                        </font></font></font>
 
 			</p>
 			<p align="justify" style="margin-top: 0.05cm"><br/>
@@ -1150,20 +796,9 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES REALIZADAS</b></font></f
 	</tr>
 	<tr>
 		<td width="595" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<p align="justify" style="margin-top: 0.05cm; font-weight: normal">
-			<br/>
-
-			</p>
+			<p align="left" style="margin-bottom: 0cm"><font color="#000000" face="Arial, serif" size="2" style="font-size: 9pt">
+			<?php findAnswer(395); /* Quais Ações Necessárias para Viabilizar as Ações de Mudança */?>
+                        </font></p>
 		</td>
 	</tr>
 </table>
@@ -1267,26 +902,9 @@ REGISTRO DAS A&Ccedil;&Otilde;ES E LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></f
 	</tr>
 	<tr>
 		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
+			<p align="left" style="margin-bottom: 0cm"><font color="#000000" face="Arial, serif" size="2" style="font-size: 9pt">
+			<?php findAnswer(397); /* Lições Aprendidas */?>
+                        </font></p>
 		</td>
 	</tr>
 </table>
@@ -1297,3 +915,82 @@ REGISTRO DAS A&Ccedil;&Otilde;ES E LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></f
 </p>
 </body>
 </html>
+
+<?php
+function bufferSelect(){
+    
+    global $servername, $username, $password, $dbname;
+    
+    global $entidade, $dataIni, $dataFim;
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+    } 
+    $sqlRelatorio = "
+        SELECT
+        glpi_plugin_formcreator_questions.id as idQuestion,
+        glpi_plugin_formcreator_answers.answer as answer
+
+        FROM glpi_plugin_formcreator_questions
+
+        INNER JOIN glpi_plugin_formcreator_sections ON (glpi_plugin_formcreator_questions.plugin_formcreator_sections_id = glpi_plugin_formcreator_sections.id)
+        INNER JOIN glpi_plugin_formcreator_forms ON (glpi_plugin_formcreator_sections.plugin_formcreator_forms_id = glpi_plugin_formcreator_forms.id)
+
+        INNER JOIN glpi_plugin_formcreator_answers ON (glpi_plugin_formcreator_questions.id = glpi_plugin_formcreator_answers.plugin_formcreator_questions_id)
+        INNER JOIN glpi_plugin_formcreator_forms_answers ON (glpi_plugin_formcreator_answers.plugin_formcreator_forms_answers_id = glpi_plugin_formcreator_forms_answers.id )
+
+        INNER JOIN glpi_entities ON (glpi_entities.id = glpi_plugin_formcreator_forms_answers.entities_id)
+
+        where
+            glpi_plugin_formcreator_forms.id = 24 and 			/* se é o Relatorio de Avaliacao de Sensiblizacao e Prospeccao de Incubacao */
+            CAST(glpi_plugin_formcreator_forms_answers.request_date AS DATE) BETWEEN '$dataIni' and '$dataFim' and /* intervalo de tempo */
+            glpi_entities.name = '$entidade'
+        order by glpi_plugin_formcreator_sections.order ASC, glpi_plugin_formcreator_questions.order ASC, glpi_plugin_formcreator_forms_answers.id ASC 
+
+        /* 
+         * carrega todas as respostas de TODOS os formularios respondidos deste relatorio e desta entidade 
+         * Lembrando que os arquivos enviados ainda não foram tratados (não tem um destino ainda no PDF)
+         * colocar o Where de tempo no SQL
+         */
+        ";
+    
+    
+
+    $result = $conn->query($sqlRelatorio);
+
+    if ($result->num_rows > 0) {
+        $i = 0;
+        $matriz = [];
+        while($row = $result->fetch_assoc()) {
+            $matriz[$i][] = $row["idQuestion"];
+            $matriz[$i][] = $row["answer"];
+            $i++;
+        }
+        return $matriz;
+    } else {
+        echo "0 results";
+        return false;
+    }
+}
+
+function findAnswer($id){
+    
+    global $matriz;
+    
+    $count = 0;
+    $tam = sizeof($matriz);
+    //echo " tamanho: $tam / count: $count";
+    while($count < $tam ){
+        if($matriz[$count][0] == $id){
+            echo " ".$matriz[$count][1]." <br>";
+        }
+        $count++;
+    }
+    return "ID not Found";
+}
+
+
+?>
