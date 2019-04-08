@@ -76,8 +76,9 @@ DADOS CADASTRAIS</b></font></font></font></p>
 </p>
 <?php
     $entidade = 'Itapina';
-    $dataIni = '2019/01/28';
-    $dataFim = '2019/05/30';
+    $entidadeId = 10; /*ID do campus de Itapina*/
+    $dataIni = '2019-03-01';
+    $dataFim = '2019-03-31';
 ?>
 <table width="604" cellpadding="4" cellspacing="0">
 	<col width="162">
@@ -382,100 +383,39 @@ A&Ccedil;&Otilde;ES SENSIBILIZA&Ccedil;&Atilde;O E PROSPEC&Ccedil;&Atilde;O</b><
 		</td>
 	</tr>
 	<tr style="background: transparent">
-		<td width="594" height="142" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
 			<font color="#000000"> <font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><span style="font-weight: normal">Durante
 			o ano, quantos eventos ser&atilde;o realizados, semestral,
-			trimestral?</span><span style="font-weight: normal">)</span></font></font></font></p>
+			trimestral?</span></font></font></font></p>
 			<table width="575" cellpadding="4" cellspacing="0">
 				<col width="214">
-				<col width="57">
 				<col width="207">
-				<col width="63">
-				<tr valign="top">
-					<td width="214" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Sensibiliza&ccedil;&atilde;o</b></font></font></p>
+				<tr>
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Sensibiliza&ccedil;&atilde;o + Data</b></font></font></p>
 					</td>
-					<td width="57" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Data</b></font></font></p>
-					</td>
-					<td width="207" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Prospec&ccedil;&atilde;o</b></font></font></p>
-					</td>
-					<td width="63" style="border: 1px solid #000000; padding: 0.1cm">
-						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Data</b></font></font></p>
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Prospec&ccedil;&atilde;o + Data</b></font></font></p>
 					</td>
 				</tr>
-				<tr valign="top">
-					<td width="214" height="24" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Exemplo:
-						Jornada de Integra&ccedil;&atilde;o</font></font></p>
+				<tr>
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+						<p align="justify"><font face="Arial, sans-serif" size="1" style="font-size: 8pt">
+                                                <?php findAnswer(651); /*Sensibilização + Data*/?>
+                                                </font></p>
 					</td>
-					<td width="57" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-
-						</p>
+					
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+						<p align="justify"><font face="Arial, sans-serif" size="1" style="font-size: 8pt">
+                                                <?php findAnswer(652); /*Prospecção + Data*/?>
+                                                </font></p>
 					</td>
-					<td width="207" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Exemplo:
-						Avaliar os projetos de inicia&ccedil;&atilde;o para
-						aproveitamento</font></font></p>
-					</td>
-					<td width="63" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
+					
 				</tr>
-				<tr valign="top">
-					<td width="214" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Palestra
-						em escolas</font></font></p>
-					</td>
-					<td width="57" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-					<td width="207" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-					<td width="63" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="214" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-					<td width="57" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-					<td width="207" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-					<td width="63" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="justify"><br/>
-
-						</p>
-					</td>
-				</tr>
+				
 			</table>
-			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
+			
 		</td>
 	</tr>
 </table>
@@ -557,9 +497,9 @@ Q</b><b>UALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES</b></font></font>
 	</tr>
 	<tr>
 		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
+			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000" face="Arial, sans-serif" size="2" style="font-size: 9pt">
                         <?php findAnswer(495); /*Vagas Ofertadas*/?>
-                        </font></font></font></p>
+                        </font></p>
 		</td>
 	</tr>
 	<tr>
@@ -656,71 +596,31 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES REALIZADAS</b></font></f
 			sensibiliza&ccedil;&atilde;o ou prospec&ccedil;&atilde;o est&aacute;
 			gerando os resultados esperados:</font></font></font></p>
 			<table width="578" cellpadding="4" cellspacing="0" style="background: transparent; page-break-before: auto; page-break-after: auto; page-break-inside: auto">
-				<col width="226">
-				<col width="83">
-				<col width="165">
-				<col width="71">
+
 				<tr style="background: transparent">
-					<td width="226" height="25" style="background: transparent" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>A&ccedil;&atilde;o
-						Realizada</b></font></font></p>
+						Realizada + N&ordm;de Participantes</b></font></font></p>
 					</td>
-					<td width="83" valign="top" style="background: transparent" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>N&ordm;
-						de Participantes</b></font></font></p>
-					</td>
-					<td width="165" valign="top" style="background: transparent" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>Compet&ecirc;ncias
-						Empreendedoras</b></font></font></p>
-					</td>
-					<td width="71" valign="top" style="background: transparent" style="border: 1px solid #000000; padding: 0.1cm">
-						<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt"><b>N&ordm;
-						de Inscritos </b></font></font>
+						Empreendedoras + N&ordm;de Inscritos </b></font></font>
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<td width="226" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><font face="Arial, serif"><font size="2" style="font-size: 9pt">Exemplo:
-						Palestra Sebrae</font></font></p>
-						<p align="left"><br/>
-
-						</p>
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+						<p align="justify"><font face="Arial, sans-serif" size="1" style="font-size: 8pt">
+                                                <?php findAnswer(653); /*Ação Realizada + Nº de participantes*/?>
+                                                </font></p>
 					</td>
-					<td width="83" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
+					
+					<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+						<p align="justify"><font face="Arial, sans-serif" size="1" style="font-size: 8pt">
+                                                <?php findAnswer(654); /*Competências Empreendedoras + Nº de Inscritos*/?>
+                                                </font></p>
 					</td>
-					<td width="165" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><font face="Arial, serif"><font size="2" style="font-size: 9pt">Curso
-						EAD</font></font></p>
-					</td>
-					<td width="71" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td width="226" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><font face="Arial, serif"><font size="2" style="font-size: 9pt">Exemplo:
-						Participa&ccedil;&atilde;o da Jornada de Integra&ccedil;&atilde;o</font></font></p>
-					</td>
-					<td width="83" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
-					<td width="165" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left"><font face="Arial, serif"><font size="2" style="font-size: 9pt">Aulas
-						Presenciais</font></font></p>
-					</td>
-					<td width="71" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left"><br/>
-
-						</p>
-					</td>
+					
 				</tr>
 			</table>
 		</td>
@@ -921,7 +821,7 @@ function bufferSelect(){
     
     global $servername, $username, $password, $dbname;
     
-    global $entidade, $dataIni, $dataFim;
+    global $entidade, $entidadeId, $dataIni, $dataFim;
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -930,30 +830,37 @@ function bufferSelect(){
             die("Connection failed: " . $conn->connect_error);
     } 
     $sqlRelatorio = "
-        SELECT
-        glpi_plugin_formcreator_questions.id as idQuestion,
-        glpi_plugin_formcreator_answers.answer as answer
+        SELECT 
+            question.id AS idQuestion,
+            question.name AS nameQuestion,
+            answer.answer AS nameAnswer
+            FROM 
+                (SELECT 
+                 a.answer AS NameA,
+                 formA.id AS IdFormA
 
-        FROM glpi_plugin_formcreator_questions
+                 FROM glpi_plugin_formcreator_answers AS a
 
-        INNER JOIN glpi_plugin_formcreator_sections ON (glpi_plugin_formcreator_questions.plugin_formcreator_sections_id = glpi_plugin_formcreator_sections.id)
-        INNER JOIN glpi_plugin_formcreator_forms ON (glpi_plugin_formcreator_sections.plugin_formcreator_forms_id = glpi_plugin_formcreator_forms.id)
+                 INNER JOIN glpi_plugin_formcreator_forms_answers AS formA 
+                        ON ( a.plugin_formcreator_forms_answers_id = formA.id)
+                 INNER JOIN glpi_plugin_formcreator_forms AS f 
+                        ON ( formA.plugin_formcreator_forms_id = f.id)
 
-        INNER JOIN glpi_plugin_formcreator_answers ON (glpi_plugin_formcreator_questions.id = glpi_plugin_formcreator_answers.plugin_formcreator_questions_id)
-        INNER JOIN glpi_plugin_formcreator_forms_answers ON (glpi_plugin_formcreator_answers.plugin_formcreator_forms_answers_id = glpi_plugin_formcreator_forms_answers.id )
+                 WHERE
+                     f.id = 24 AND /* ID do relatorio 1 */
+                     formA.entities_id = $entidadeId AND /* ID do campus de Itapina */
+                     a.plugin_formcreator_questions_id = 655 AND
+                     a.answer BETWEEN '$dataIni' and '$dataFim'
+                ) AS access
 
-        INNER JOIN glpi_entities ON (glpi_entities.id = glpi_plugin_formcreator_forms_answers.entities_id)
-
-        where
-            glpi_plugin_formcreator_forms.id = 24 and 			/* se é o Relatorio de Avaliacao de Sensiblizacao e Prospeccao de Incubacao */
-            CAST(glpi_plugin_formcreator_forms_answers.request_date AS DATE) BETWEEN '$dataIni' and '$dataFim' and /* intervalo de tempo */
-            glpi_entities.name = '$entidade'
-        order by glpi_plugin_formcreator_sections.order ASC, glpi_plugin_formcreator_questions.order ASC, glpi_plugin_formcreator_forms_answers.id ASC 
+            INNER JOIN glpi_plugin_formcreator_answers AS answer
+                ON (answer.plugin_formcreator_forms_answers_id = access.idFormA)
+            INNER JOIN glpi_plugin_formcreator_questions as question
+                ON (answer.plugin_formcreator_questions_id = question.id)
 
         /* 
-         * carrega todas as respostas de TODOS os formularios respondidos deste relatorio e desta entidade 
+         * 'access' é o nome da tabela que carrega os formularios respondindos nos conformes de tempo
          * Lembrando que os arquivos enviados ainda não foram tratados (não tem um destino ainda no PDF)
-         * colocar o Where de tempo no SQL
          */
         ";
     
@@ -966,7 +873,7 @@ function bufferSelect(){
         $matriz = [];
         while($row = $result->fetch_assoc()) {
             $matriz[$i][] = $row["idQuestion"];
-            $matriz[$i][] = $row["answer"];
+            $matriz[$i][] = $row["nameAnswer"];
             $i++;
         }
         return $matriz;
@@ -974,6 +881,8 @@ function bufferSelect(){
         echo "0 results";
         return false;
     }
+    
+    $conn->close();
 }
 
 function findAnswer($id){
@@ -982,7 +891,7 @@ function findAnswer($id){
     
     $count = 0;
     $tam = sizeof($matriz);
-    //echo " tamanho: $tam / count: $count";
+
     while($count < $tam ){
         if($matriz[$count][0] == $id){
             echo " ".$matriz[$count][1]." <br>";

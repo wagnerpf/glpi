@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
+
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
 	<title>Manual de Implanta&ccedil;&atilde;o Cerne 2018</title>
@@ -14,7 +14,7 @@
 		a:link { so-language: zxx }
 	</style>
 </head>
-<body lang="pt-BR" dir="ltr">
+
 <div title="header">
 	<p style="margin-top: 0.42cm; margin-bottom: 0.5cm; page-break-after: avoid">
 	<img src="2-Relatorio_html_dde9ce1185cf5989.png" name="Figura3" align="left" width="167" height="49">
@@ -71,7 +71,24 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
 
 </p>
 <?php
+    $entidade = 'Itapina';
+    $entidadeId = 10; /*ID do campus de Itapina*/
+    $dataIni = '2019-03-01';
+    $dataFim = '2019-03-31';
+    $servername = "localhost";
+    $username = "root";
+    $password = "123456";
+    $dbname = "glpi";
+?>
 
+<?php
+    $empreendedor = bufferRelatorio_Empreendedor(); //criando a matriz do select
+    $final = bufferRelatorio_Final();
+    $matrizEachEmp = matrizEachEmpreendedor($empreendedor);
+    
+    $count = 0;
+    for($count=0;$count < sizeof($matrizEachEmp);$count++){
+    
 ?>
     <table width="604" cellpadding="0" cellspacing="0">
             <col width="25">
@@ -87,7 +104,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td colspan="2" width="463" valign="top" style="border: 1px solid #000000; padding: 0cm">
                             <p align="center" style="margin-top: 0.05cm"><font color="#000000" size="1" style="font-size: 12pt"><b>
-                                ##Nome do Empreendimento##
+                                <?php findAnswer(400,$matrizEachEmp[$count]); /*Nome do Empreendimento*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -104,7 +121,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## Responsavel ##
+                                <?php findAnswer(401,$matrizEachEmp[$count]); /*Responsavel*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -116,7 +133,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## CPF/CNPJ ##
+                                <?php findAnswer(402,$matrizEachEmp[$count]); /*CPF/CNPJ*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -127,7 +144,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## Atuação do emp ##
+                                <?php findAnswer(403,$matrizEachEmp[$count]); /*Atuação do emp*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -137,7 +154,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## Telefone ##
+                                <?php findAnswer(404,$matrizEachEmp[$count]); /*Telefone*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -147,7 +164,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## E-mail ##
+                                <?php findAnswer(405,$matrizEachEmp[$count]); /*E-mail*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -159,7 +176,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## Entrada na incubadora ##
+                                <?php findAnswer(406,$matrizEachEmp[$count]); /*Entrada na incubadora*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -171,7 +188,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## Data de Conclusão ##
+                                <?php findAnswer(407,$matrizEachEmp[$count]); /*Data de Conclusão*/ ?>
                             </b></font></p>
                     </td>
             </tr>
@@ -182,13 +199,13 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
                     </td>
                     <td width="339" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm">
                             <p align="left" style="margin-right: 0.1cm; margin-top: 0.05cm"><font color="#000000" face="Arial, sans-serif" size="1" style="font-size: 10pt"><b>
-                                ## possui capital próprio ##
+                                <?php findAnswer(408,$matrizEachEmp[$count]); /*possui capital próprio*/ ?>
                             </b></font></p>
                     </td>
             </tr>
     </table>
 <?php
-
+    }
 ?>
 
 <br/>
@@ -215,7 +232,7 @@ INFORMA&Ccedil;&Otilde;ES ADICIONAIS</b></font></font></font></p>
 	<tr>
 		<td style="text-align: center; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 		
-                ## Principais seg da inc ## <!-- area da entidade -->
+                <?php segEntity(); /*Principais seg da inc*/ ?>
 	
 		</td>
 	</tr>
@@ -245,22 +262,22 @@ INFORMA&Ccedil;&Otilde;ES ADICIONAIS</b></font></font></font></p>
 					</td>
 				</tr>
 <?php
-
+    for($count=0;$count < sizeof($matrizEachEmp);$count++){
 ?>
 				<tr valign="top">
 					<td width="18%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="justify"><br/>
-                                                    ## Nome do empreendimento ##
+						<p align="justify">
+                                                    <?php findAnswer(400,$matrizEachEmp[$count]); /*Nome do empreendimento*/ ?>
 						</p>
 					</td>
 					<td width="82%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="justify"><br/>
-                                                    ## Produtos ou serviços ##
+						<p align="justify">
+                                                    <?php findAnswer(409,$matrizEachEmp[$count]); /*Produtos ou serviços*/ ?>
 						</p>
 					</td>
 				</tr>
 <?php
-
+    }
 ?>
 			</table>
 			
@@ -316,42 +333,42 @@ INFORMA&Ccedil;&Otilde;ES ADICIONAIS</b></font></font></font></p>
 					</td>
 				</tr>
 <?php
-
+    for($count=0;$count < sizeof($matrizEachEmp);$count++){
 ?>
 				<tr valign="top">
 					<td width="96" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="justify"><br/>
-                                                    ## Nome do Empreendimento ##
+                                                    <?php findAnswer(400,$matrizEachEmp[$count]); /*## Nome do Empreendimento ##*/ ?>
 						</p>
 					</td>
 					<td width="72" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="justify"><br/>
-                                                    ## Possui Funcionário ##
+                                                    <?php findAnswer(410,$matrizEachEmp[$count]); /*## Possui Funcionário ##*/ ?>
 						</p>
 					</td>
 					<td width="101" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="justify"><br/>
-                                                    ## Enquadramento Tributário Indicado ##
+                                                    <?php findAnswer(411,$matrizEachEmp[$count]); /*## Enquadramento Tributário Indicado ##*/ ?>
 						</p>
 					</td>
 					<td width="72" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="justify"><br/>
-                                                    ## Recursos Próprio (%) ##
+                                                    <?php findAnswer(412,$matrizEachEmp[$count]); /*## Recursos Próprio (%) ##*/ ?>
 						</p>
 					</td>
 					<td width="78" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="justify"><br/>
-                                                    ## Recursos de Terceiro (%) ##
+                                                    <?php findAnswer(413,$matrizEachEmp[$count]); /*## Recursos de Terceiro (%) ##*/ ?>
 						</p>
 					</td>
 					<td width="124" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 						<p align="justify"><br/>
-                                                    ## Captação de Recursos Indicado ##
+                                                    <?php findAnswer(414,$matrizEachEmp[$count]); /*## Captação de Recursos Indicado ##*/ ?>
 						</p>
 					</td>
 				</tr>
 <?php
-
+    }
 ?>				
 			</table>
 		</td>
@@ -381,9 +398,7 @@ EMPREENDEDORES</b></font></font></font></p>
 		<td style="text-align: center; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
 			<font color="#000000" face="Arial, sans-serif" size="2" style="font-size: 9pt">
-                                   ## O gestor precisa definir como &eacute; realizada a qualifica&ccedil;&atilde;o
-			dos potenciais empreendedores para apresenta&ccedil;&atilde;o de
-			propostas de empreendimentos inovadores &agrave; incubadora. ##
+                                   <?php findAnswer(609, $final) /*AQPE*/ ?>
                                 </font></p>
 			
 		</td>
@@ -401,7 +416,7 @@ EMPREENDEDORES</b></font></font></font></p>
 		<td style="text-align: center; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="center" style="margin-top: 0.05cm; font-weight: normal; background: transparent">
 			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
-                                    ## Exemplo: Mensal, Trimestral, Semestral ##
+                                    <?php findAnswer(465, $final) ?> <!-- ## Exemplo: Mensal, Trimestral, Semestral ## -->
                                 </font></font></font></p>
 		</td>
 	</tr>
@@ -414,7 +429,7 @@ EMPREENDEDORES</b></font></font></font></p>
 	<tr>
 		<td style="text-align: center; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
-                                        ## Quantidades de vagas ofertadas ##
+                                        <?php findAnswer(466, $final) ?> <!-- ## Quantidades de vagas ofertadas ## -->
                                     </font></font></font></p>
 		</td>
 	</tr>
@@ -428,10 +443,10 @@ EMPREENDEDORES</b></font></font></font></p>
 		<td style="text-align: center; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; font-weight: normal">
 			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 9pt">
-                                    ## O gestor precisa definir como os empreendedores podem submeter
+                                    <?php findAnswer(467, $final) ?> <!-- ## O gestor precisa definir como os empreendedores podem submeter
 			propostas &agrave; incubadora. Para isso, devem ser definidas as
 			fases, os formul&aacute;rios e as ferramentas que ser&atilde;o
-			utilizadas para a recep&ccedil;&atilde;o de propostas ##
+			utilizadas para a recep&ccedil;&atilde;o de propostas ## -->
                                 </font></font></font>
 			</p>
 		</td>
@@ -469,17 +484,17 @@ EMPREENDEDORES</b></font></font></font></p>
 				<tr valign="top">
 					<td width="182" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="center"><br/>
-                                                    ## 1 ##
+                                                    <?php findAnswer(468, $final) ?> 
 						</p>
 					</td>
 					<td width="186" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 						<p align="center"><br/>
-                                                    ## 2 ##
+                                                    <?php findAnswer(469, $final) ?>
 						</p>
 					</td>
 					<td width="185" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 						<p align="center"><br/>
-                                                    ## 3 ##
+                                                    <?php findAnswer(470, $final) ?>
 						</p>
 					</td>
 				</tr>
@@ -487,11 +502,10 @@ EMPREENDEDORES</b></font></font></font></p>
 		</td>
 	</tr>
 </table>
-<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
+
 <br/>
 <br/>
 
-</p>
 <table width="605" cellpadding="4" cellspacing="0" style="background: transparent; page-break-before: auto; page-break-after: auto; page-break-inside: auto">
 	<col width="124">
 	<col width="366">
@@ -505,7 +519,7 @@ EMPREENDEDORES</b></font></font></font></p>
 	<tr style="background: transparent">
 		<td colspan="3" width="595" height="75" valign="top" style="background: transparent" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="center" style="margin-top: 0.05cm; font-weight: normal"><br/>
-                            ## Apoios Oferecidos ##
+                            <?php findAnswer(611, $final) ?> <!-- ## Apoios Oferecidos ## -->
 			</p>
 		</td>
 	</tr>
@@ -531,17 +545,17 @@ EMPREENDEDORES</b></font></font></font></p>
 		</td>
 	</tr>
 <?php
-
+    for($count=0;$count < sizeof($matrizEachEmp);$count++){
 ?>
 	<tr valign="top">
 		<td width="6" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p><font face="Arial, sans-serif" size="2" style="font-size: 10pt">
-                                    ## Exemplo: Xempreendimentos ##
+                                    <?php findAnswer(400, $matrizEachEmp[$count]) ?> <!-- ## Exemplo: Xempreendimentos ##-->
                                 </font></p>
 		</td>
 		<td width="366" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                                    ## Exemplo: Uso de sala (&aacute;rea f&iacute;sica: 18m&sup2;) ##
+                                    <?php findAnswer(608, $matrizEachEmp[$count]) ?> <!-- ## Exemplo: Uso de sala (&aacute;rea f&iacute;sica: 18m&sup2;) ##-->
                                 </font></font></p>
 		</td>
 		<td width="89" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
@@ -552,7 +566,7 @@ EMPREENDEDORES</b></font></font></font></p>
 	</tr>
         
 <?php
-
+    }
 ?>
         
 </table>
@@ -597,32 +611,32 @@ MODALIDADE RESID&Ecirc;NCIA</b></font></font></font></p>
 	</tr>
         
 <?php
-
+    for($count=0;$count < sizeof($matrizEachEmp);$count++){
 ?>
 	<tr valign="top">
 		<td width="112" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="left">
-                            ## 1 ##
+                            <?php findAnswer(400, $matrizEachEmp[$count]); ?>
 			</p>
 		</td>
 		<td width="60" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="left">
-                            ## 2 ## 
+                            <?php findAnswer(643, $matrizEachEmp[$count]); ?> 
 			</p>
 		</td>
 		<td width="64" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="left">
-                            ## 3 ##
+                            <?php findAnswer(644, $matrizEachEmp[$count]); ?>
 			</p>
 		</td>
 		<td width="335" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="left">
-                            ## 4 ##
+                            <?php findAnswer(645, $matrizEachEmp[$count]); ?>
 			</p>
 		</td>
 	</tr>
 <?php
-
+    }
 ?>
         
 </table>
@@ -653,9 +667,8 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm">
 			<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>EFIC&Aacute;CIA
 			DAS A&Ccedil;&Otilde;ES:</b></font></font></font></p>
-			<p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">
-                                        ## (Compara&ccedil;&atilde;o
-                                        entre o que se pretendia fazer e o que efetivamente se conseguiu) ##
+			<p align="center" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">
+                                        <?php findAnswer(415, $final) /*Eficacia das Ações*/ ?>
                                     </font></font></font></p>
                         
                         <br>
@@ -665,9 +678,7 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 			<font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>EFICI&Ecirc;NCIA
 			DAS A&Ccedil;&Otilde;ES:</b></font></font></font></p>
 			<p align="left" style="margin-bottom: 0cm"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 9pt">
-                                        ## (Rela&ccedil;&atilde;o
-                                        entre os resultados que se conseguiu alcan&ccedil;ar e os recursos
-                                        empregados, recursos alcan&ccedil;ados/recursos utilizados) ##
+                                        <?php findAnswer(416, $final) /*Eficiencia das Ações*/?>
                                     </font></font></font></p>
 			<br>
                         <br>
@@ -686,7 +697,7 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 	<tr>
 		<td width="595" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="justify" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-                            ## Necessidade ##
+                            <?php findAnswer(483, $final) /*necessidade de mudança nas ações*/ ?>
 			<br/>
 
 		</td>
@@ -705,7 +716,7 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 	<tr>
 		<td width="595" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-                            ## Quais Ações ##
+                            <?php findAnswer(484, $final) /*Quais Ações*/?>
 			<br/>
 		</td>
 	</tr>
@@ -722,7 +733,7 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
 			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
-                                    ## Exemplo:	Mensal, Trimestral, Semestral&hellip;. ##
+                                    <?php findAnswer(485, $final) ?> <!--## Exemplo:	Mensal, Trimestral, Semestral&hellip;. ##-->
                                 </font></font></font></p>
 			
 		</td>
@@ -900,20 +911,18 @@ REGISTRO DAS A&Ccedil;&Otilde;ES E LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></f
 	<tr>
 		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
 			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-                            ## lições aprendidas ##
+                            <?php findAnswer(487, $final) ?> <!--## lições aprendidas ## -->
 			<br/>
 
 		</td>
 	</tr>
 </table>
-<p style="margin-bottom: 0cm"><br/>
 
-</p>
-</body>
-</html>
+
 
 <?php
-function bufferSelect(){
+
+function bufferRelatorio_Final(){
     
     global $servername, $username, $password, $dbname;
     
@@ -929,30 +938,37 @@ function bufferSelect(){
         SELECT 
             question.id AS idQuestion,
             question.name AS nameQuestion,
-            answer.answer AS nameAnswer
-            FROM 
-                (SELECT 
-                 a.answer AS NameA,
-                 formA.id AS IdFormA
+            answer.answer AS nameAnswer,
+            answer.plugin_formcreator_forms_answers_id as idFormAnswer
+        FROM 
+            (SELECT 
+                q.id as IdQ,
+                q.name as NameQ,
+                a.answer AS NameA,
+                formA.id AS IdFormA,
+                formA.plugin_formcreator_forms_id as IdForm
 
-                 FROM glpi_plugin_formcreator_answers AS a
+            FROM glpi_plugin_formcreator_answers AS a
 
-                 INNER JOIN glpi_plugin_formcreator_forms_answers AS formA 
-                        ON ( a.plugin_formcreator_forms_answers_id = formA.id)
-                 INNER JOIN glpi_plugin_formcreator_forms AS f 
-                        ON ( formA.plugin_formcreator_forms_id = f.id)
+            INNER JOIN glpi_plugin_formcreator_forms_answers AS formA 
+                   ON ( a.plugin_formcreator_forms_answers_id = formA.id)
+            INNER JOIN glpi_plugin_formcreator_forms AS f 
+                   ON ( formA.plugin_formcreator_forms_id = f.id)
+            INNER JOIN glpi_plugin_formcreator_questions as q
+                   ON (q.id = a.plugin_formcreator_questions_id)
 
-                 WHERE
-                     f.id = 24 AND /* ID do relatorio 1 */
-                     formA.entities_id = $entidadeId AND /* ID do campus de Itapina */
-                     a.plugin_formcreator_questions_id = 655 AND
-                     a.answer BETWEEN '$dataIni' and '$dataFim'
-                ) AS access
+            WHERE
+                f.id = 26 AND  /* ID do relatorio */
+                formA.entities_id = 10  AND /* ID da entidade */
+                q.id = 656 AND /* ID da questão de checar dia */
+                a.answer BETWEEN '2019-03-24' and '2019-03-26'
 
-            INNER JOIN glpi_plugin_formcreator_answers AS answer
-                ON (answer.plugin_formcreator_forms_answers_id = access.idFormA)
-            INNER JOIN glpi_plugin_formcreator_questions as question
-                ON (answer.plugin_formcreator_questions_id = question.id)
+            ) AS access
+
+        INNER JOIN glpi_plugin_formcreator_answers AS answer
+            ON (answer.plugin_formcreator_forms_answers_id = access.idFormA)
+        INNER JOIN glpi_plugin_formcreator_questions as question
+            ON (answer.plugin_formcreator_questions_id = question.id)
 
         /* 
          * 'access' é o nome da tabela que carrega os formularios respondindos nos conformes de tempo
@@ -977,23 +993,148 @@ function bufferSelect(){
         echo "0 results";
         return false;
     }
+    $conn->close();
 }
 
-function findAnswer($id){
+function bufferRelatorio_Empreendedor(){
     
-    global $matriz;
+    global $servername, $username, $password, $dbname;
+    
+    global $entidade, $entidadeId, $dataIni, $dataFim;
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+    } 
+    $sqlRelatorio = "
+        SELECT 
+            question.id AS idQuestion,
+            question.name AS nameQuestion,
+            answer.answer AS nameAnswer,
+            answer.plugin_formcreator_forms_answers_id as idFormAnswer
+        FROM 
+            (SELECT 
+                q.id as IdQ,
+                q.name as NameQ,
+                a.answer AS NameA,
+                formA.id AS IdFormA,
+                formA.plugin_formcreator_forms_id as IdForm
+
+            FROM glpi_plugin_formcreator_answers AS a
+
+            INNER JOIN glpi_plugin_formcreator_forms_answers AS formA 
+                   ON ( a.plugin_formcreator_forms_answers_id = formA.id)
+            INNER JOIN glpi_plugin_formcreator_forms AS f 
+                   ON ( formA.plugin_formcreator_forms_id = f.id)
+            INNER JOIN glpi_plugin_formcreator_questions as q
+                   ON (q.id = a.plugin_formcreator_questions_id)
+
+            WHERE
+                f.id = 25 AND  /* ID do relatorio */
+                formA.entities_id = $entidadeId  AND /* ID da entidade */
+                q.id = 657 AND /* ID da questão de checar dia */
+                a.answer BETWEEN '$dataIni' and '$dataFim'
+
+            ) AS access
+
+        INNER JOIN glpi_plugin_formcreator_answers AS answer
+            ON (answer.plugin_formcreator_forms_answers_id = access.idFormA)
+        INNER JOIN glpi_plugin_formcreator_questions as question
+            ON (answer.plugin_formcreator_questions_id = question.id)
+
+        /* 
+         * 'access' é o nome da tabela que carrega os formularios respondindos nos conformes de tempo
+         * Lembrando que os arquivos enviados ainda não foram tratados (não tem um destino ainda no PDF)
+         */
+        ";
+    
+    
+
+    $result = $conn->query($sqlRelatorio);
+
+    if ($result->num_rows > 0) {
+        $i = 0;
+        $matriz = [];
+        while($row = $result->fetch_assoc()) {
+            $matriz[$i][] = $row["idQuestion"];
+            $matriz[$i][] = $row["nameAnswer"];
+            $matriz[$i][] = $row["idFormAnswer"];
+
+            $i++;
+        }
+        return $matriz;
+    } else {
+        echo "0 results";
+        return false;
+    }
+    $conn->close();
+}
+
+function segEntity(){
+    global $servername, $username, $password, $dbname;
+    
+    global $entidade, $entidadeId;
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+    } 
+    $sqlRelatorio = "
+        SELECT 
+            entities.name,
+            entities.comment
+        FROM glpi_entities as entities
+        WHERE 
+            entities.id = $entidadeId
+    ";
+
+    $result = $conn->query($sqlRelatorio);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        echo " ".$row["comment"]." ";
+    } else {
+        echo "0 results";
+        return false;
+    }
+    $conn->close();
+}
+
+function findAnswer($id,$matriz){
+    
     
     $count = 0;
     $tam = sizeof($matriz);
 
     while($count < $tam ){
         if($matriz[$count][0] == $id){
-            echo " ".$matriz[$count][1]." <br>";
+            echo " ".$matriz[$count][1]." ";
         }
         $count++;
     }
     return "ID not Found";
 }
 
+function matrizEachEmpreendedor($matriz){ 
+    $matrizEmp = [];
+    $id_formulario_respondido = $matriz[0][2];
+    $count =0;
+    $i=0;
+    while($count < sizeof($matriz)){
+        if ($id_formulario_respondido == $matriz[$count][2]){
+            $matrizEmp[$i][] = $matriz[$count];
+            //echo "matriz[".$i."][] count = ".$count." | Data = ".$matriz[$count][2]." <br>";
+            $count++;
+        }else{
+            //echo "switch <br>";
+            $i++;
+            $id_formulario_respondido = $matriz[$count][2];
+        }
+    }
+    return $matrizEmp;
+}
 
 ?>
