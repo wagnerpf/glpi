@@ -491,14 +491,13 @@ INFORMA&Ccedil;&Otilde;ES DO EMPREENDIMENTO</b></font></font></font></p>
 	<col width="131">
 	<col width="37">
 	<col width="37">
-	<col width="59">
-	<col width="46">
-	<col width="52">
-	<col width="57">
 	<col width="67">
-	<col width="44">
+	<col width="52">
+	<col width="87">
+	<col width="57">
+	<col width="70">
 	<tr style="background: transparent">
-		<td colspan="9" width="595" valign="top" bgcolor="#dddddd" style="background: #dddddd" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0.1cm">
+		<td colspan="8" width="595" valign="top" bgcolor="#dddddd" style="background: #dddddd" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0.1cm">
 			<p align="center"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Propriedade</b>
 			<b>Intelectual</b></font></font></p>
 		</td>
@@ -508,18 +507,12 @@ INFORMA&Ccedil;&Otilde;ES DO EMPREENDIMENTO</b></font></font></font></p>
 			<p align="center"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Nomes
 			dos Empreendedores</font></font></p>
 		</td>
-		<td colspan="6" width="328" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+		<td colspan="6" width="377" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" style="font-weight: normal"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Quantidades</font></font></p>
 		</td>
-		<td rowspan="2" width="67" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			
-			<p align="center" style="font-weight: none"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Independente
-			(sim/n&atilde;o)</font></font></p>
-		</td>
-		<td rowspan="2" width="44" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			
-			<p align="center" style="font-weight: normal"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Apoio
-			do IFES (sim/n&atilde;o)</font></font></p>
+		<td rowspan="2" width="70" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p align="center"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt"><span style="font-weight: normal">Apoio
+			do IFES (sim/n&atilde;o)</span></font></font></p>
 		</td>
 	</tr>
 	<tr>
@@ -529,15 +522,15 @@ INFORMA&Ccedil;&Otilde;ES DO EMPREENDIMENTO</b></font></font></font></p>
 		<td width="37" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" style="font-weight: normal"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Patente</font></font></p>
 		</td>
-		<td width="59" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+		<td width="67" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" style="font-weight: normal"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Programa
 			de Computador</font></font></p>
 		</td>
-		<td width="46" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+		<td width="52" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" style="font-weight: normal"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Desenho
 			Industrial</font></font></p>
 		</td>
-		<td width="52" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+		<td width="87" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" style="font-weight: normal"><font face="Arial, sans-serif"><font size="1" style="font-size: 8pt">Topografia
 			de Circuito Integrado</font></font></p>
 		</td>
@@ -558,42 +551,42 @@ INFORMA&Ccedil;&Otilde;ES DO EMPREENDIMENTO</b></font></font></font></p>
 		</td>
 		<td width="37" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(331, $matrizEachEmp[$count]);?>
+                                    <?php findAnswer(330, $matrizEachEmp[$count]);?> 
                                 </font></p>
 		</td>
 		<td width="37" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(332, $matrizEachEmp[$count]);?>
-                                </font></p>
-		</td>
-		<td width="59" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(330, $matrizEachEmp[$count]);?>
-                                </font></p>
-		</td>
-		<td width="46" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(329, $matrizEachEmp[$count]);?>
-                                </font></p>
-		</td>
-		<td width="52" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(659, $matrizEachEmp[$count]);?>
-                                </font></p>
-		</td>
-		<td width="57" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(660, $matrizEachEmp[$count]);?>
+                                    <?php findAnswer(329, $matrizEachEmp[$count]);?> 
                                 </font></p>
 		</td>
 		<td width="67" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(661, $matrizEachEmp[$count]);?>
+                                    <?php findAnswer(659, $matrizEachEmp[$count]);?> 
                                 </font></p>
 		</td>
-		<td width="44" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+		<td width="52" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
 			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
-                                    <?php findAnswer(662, $matrizEachEmp[$count]);?>
+                                    <?php findAnswer(660, $matrizEachEmp[$count]);?> 
+                                </font></p>
+		</td>
+		<td width="87" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
+                                    <?php findAnswer(661, $matrizEachEmp[$count]);?> 
+                                </font></p>
+		</td>
+		<td width="57" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
+                                    <?php findAnswer(662, $matrizEachEmp[$count]);?> 
+                                </font></p>
+		</td>
+<!--		<td width="67" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
+                                    <?php // findAnswer(661, $matrizEachEmp[$count]);?>
+                                </font></p>
+		</td>-->
+		<td width="70" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p align="center" face="Arial, sans-serif"><font size="1" style="font-size: 8pt">
+                                    <?php findAnswer(332, $matrizEachEmp[$count]);?> 
                                 </font></p>
 		</td>
 	</tr>
@@ -964,72 +957,7 @@ INFORMA&Ccedil;&Otilde;ES DO EMPREENDIMENTO</b></font></font></font></p>
 <?php
     }
 ?>
-	</tr>
-	<tr valign="top">
-		<td width="138" height="27" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p><font face="Arial, sans-serif"><font size="1" style="font-size: 7pt">Valor
-			de mercados dos ativos ap&oacute;s o horizonte do projeto</font></font></p>
-		</td>
-<?php
-    for($count=0;$count<sizeof($matrizEachEmp);$count++){ //loop "Valor de mercado"
-?>
-                <td width="86" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center"><font face="Arial, sans-serif" size="2" style="font-size: 10pt">
-                                    <?php findAnswer(344, $matrizEachEmp[$count]);?>
-                        </font></p>
-		</td>
-<?php
-    }
-?>
-	</tr>
-	<tr valign="top">
-		<td width="138" height="14" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p><font face="Arial, sans-serif"><font size="1" style="font-size: 7pt">CDI</font></font></p>
-		</td>
-<?php
-    for($count=0;$count<sizeof($matrizEachEmp);$count++){ //loop "CDI"
-?>
-                <td width="86" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center"><font face="Arial, sans-serif" size="2" style="font-size: 10pt">
-                                    <?php findAnswer(549, $matrizEachEmp[$count]);?>
-                        </font></p>
-		</td>
-<?php
-    }
-?>
-	</tr>
-	<tr valign="top">
-		<td width="138" height="10" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p><font face="Arial, sans-serif"><font size="1" style="font-size: 7pt">Beta</font></font></p>
-		</td>
-<?php
-    for($count=0;$count<sizeof($matrizEachEmp);$count++){ //loop "Beta"
-?>
-                <td width="86" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center"><font face="Arial, sans-serif" size="2" style="font-size: 10pt">
-                                    <?php findAnswer(550, $matrizEachEmp[$count]);?>
-                        </font></p>
-		</td>
-<?php
-    }
-?>
-	</tr>
-	<tr valign="top">
-		<td width="138" height="9" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-			<p><font face="Arial, sans-serif"><font size="1" style="font-size: 7pt">Pr&ecirc;mio
-			de Risco:</font></font></p>
-		</td>
-<?php
-    for($count=0;$count<sizeof($matrizEachEmp);$count++){ //loop "Premio de Risco"
-?>
-                <td width="86" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="center"><font face="Arial, sans-serif" size="2" style="font-size: 10pt">
-                                    <?php findAnswer(551, $matrizEachEmp[$count]);?>
-                        </font></p>
-		</td>
-<?php
-    }
-?>
+
 	</tr>
 </table>
 
@@ -1339,7 +1267,7 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 	</tr>
 	<tr>
 		<td width="595" height="36" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
+			<p align="center" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
 			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">
                                     <?php findAnswer(614, $final) ?> <!--## Exemplo:	Mensal, Trimestral, Semestral&hellip;. ##-->
                                 </font></font></font></p>
@@ -1349,156 +1277,14 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 </table>
 
 
-<p style="margin-bottom: 0cm"><br/>
-
-</p>
-<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
-<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>VI.
-REGISTRO DAS A&Ccedil;&Otilde;ES </b></font></font></font>
-</p>
-<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
-<br/>
-<br/>
-
-</p>
-<table width="605" cellpadding="4" cellspacing="0" style="background: transparent; page-break-before: auto; page-break-after: auto; page-break-inside: auto">
-	<col width="595">
-	<tr style="background: transparent">
-		<td width="595" height="20" valign="top" bgcolor="#dddddd" style="background: #dddddd" style="border: 1px solid #000000; padding: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm; page-break-before: auto; page-break-after: auto">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Registro
-			das A&ccedil;&otilde;es, Resultados e Avalia&ccedil;&otilde;es da
-			Efetividade das A&ccedil;&otilde;es (Anexos)</b></font></font></font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" height="397" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="left" style="margin-left: 0.4cm; margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; background: transparent">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Descrever
-			abaixo quais s&atilde;o os anexos deste relat&oacute;rio de
-			gest&atilde;o. Caso seja necess&aacute;rio, insira mais linhas na
-			tabela abaixo.</font></font></font></p>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<table width="572" cellpadding="4" cellspacing="0">
-				<col width="146">
-				<col width="408">
-				<tr valign="top">
-					<td width="146" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>N&uacute;mero
-						do Anexo</b></font></font></font></p>
-					</td>
-					<td width="408" style="border: 1px solid #000000; padding: 0.1cm">
-						<p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Descri&ccedil;&atilde;o
-						do Anexo</b></font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">001</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Fichas de Inscri&ccedil;&otilde;es</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">002</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Registro dos Crit&eacute;rios de Sele&ccedil;&atilde;o e
-						Avalia&ccedil;&atilde;o</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">003</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Plano de Qualifica&ccedil;&atilde;o dos Empreendedores</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">004</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Lista dos Profissionais (Docentes e Orientadores) envolvidos</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">005</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Formul&aacute;rio para Elabora&ccedil;&atilde;o do Plano de
-						Neg&oacute;cio</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">006</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Minutas Contratuais (TASI)</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">007</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Cronograma </font></font></font>
-						</p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">008</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Rela&ccedil;&atilde;o final dos empreendedores classificados na
-						gradua&ccedil;&atilde;o</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">009</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Formul&aacute;rio das Propostas Enviadas </font></font></font>
-						</p>
-					</td>
-				</tr>
-			</table>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
-		</td>
-	</tr>
-</table>
 <p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
 <br/>
 <br/>
 
 </p>
 <p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-style: normal; line-height: 100%">
-<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>VII.
-REGISTRO DAS A&Ccedil;&Otilde;ES E LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></font></font></p>
+<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>VI.
+LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></font></font></p>
 <p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-style: normal; line-height: 100%">
 <br/>
 <br/>

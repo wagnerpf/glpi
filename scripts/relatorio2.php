@@ -74,7 +74,7 @@ APRESENTA&Ccedil;&Atilde;O DOS EMPREENDIMENTOS</b></font></font></font></p>
     $entidade = 'Itapina';
     $entidadeId = 10; /*ID do campus de Itapina*/
     $dataIni = '2019-03-01';
-    $dataFim = '2019-03-31';
+    $dataFim = '2019-04-01';
     $servername = "localhost";
     $username = "root";
     $password = "123456";
@@ -744,157 +744,12 @@ QUALIFICA&Ccedil;&Atilde;O DE POTENCIAIS EMPREENDEDORES </b></font></font></font
 <br/>
 
 
-<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
-<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>VI.
-REGISTRO DAS A&Ccedil;&Otilde;ES </b></font></font></font>
-</p>
-<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; line-height: 100%">
-<br/>
-<br/>
 
-</p>
-<table width="605" cellpadding="4" cellspacing="0" style="background: transparent; page-break-before: auto; page-break-after: auto; page-break-inside: auto">
-	<col width="595">
-	<tr style="background: transparent">
-		<td width="595" height="20" valign="top" bgcolor="#dddddd" style="background: #dddddd" style="border: 1px solid #000000; padding: 0.1cm">
-			<p align="center" style="margin-top: 0.05cm; page-break-before: auto; page-break-after: auto">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Registro
-			das A&ccedil;&otilde;es, Resultados e Avalia&ccedil;&otilde;es da
-			Efetividade das A&ccedil;&otilde;es (Anexos)</b></font></font></font></p>
-		</td>
-	</tr>
-	<tr>
-		<td width="595" height="397" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-			<p align="left" style="margin-left: 0.4cm; margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; background: transparent">
-			<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Descrever
-			abaixo quais s&atilde;o os anexos deste relat&oacute;rio de
-			gest&atilde;o. Caso seja necess&aacute;rio, insira mais linhas na
-			tabela abaixo.</font></font></font></p>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal">
-			<br/>
-<br/>
-
-			</p>
-			<table width="572" cellpadding="4" cellspacing="0">
-				<col width="146">
-				<col width="408">
-				<tr valign="top">
-					<td width="146" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>N&uacute;mero
-						do Anexo</b></font></font></font></p>
-					</td>
-					<td width="408" style="border: 1px solid #000000; padding: 0.1cm">
-						<p align="center" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>Descri&ccedil;&atilde;o
-						do Anexo</b></font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">001</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Lista de Matriculados</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">002</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Registro geral da pontua&ccedil;&atilde;o dos Crit&eacute;rios
-						de Sele&ccedil;&atilde;o e Avalia&ccedil;&atilde;o</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">003</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Registro Geral da Pontua&ccedil;&atilde;o da Apresenta&ccedil;&atilde;o
-						Oral</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">004</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Lista dos Profissionais (Docentes e Orientadores) envolvidos</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">005</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Ementa do conte&uacute;do da qualifica&ccedil;&atilde;o dos
-						Empreendedores</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">006</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Crit&eacute;rios de Avalia&ccedil;&atilde;o (Modelo)</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">007</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Cronograma </font></font></font>
-						</p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">008</font></font></font></p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt">Exemplo:
-						Rela&ccedil;&atilde;o final dos empreendedores classificados
-						para Incuba&ccedil;&atilde;o</font></font></font></p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td width="146" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
-						<p align="left" style="margin-top: 0.05cm"><br/>
-
-						</p>
-					</td>
-					<td width="408" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
-						<p align="left" style="margin-top: 0.05cm"><br/>
-
-						</p>
-					</td>
-				</tr>
-			</table>
-			<p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-weight: normal; line-height: 100%">
-			<br/>
-<br/>
-
-			</p>
-		</td>
-	</tr>
-</table>
-
-
-<br/>
-<br/>
 
 
 <p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-style: normal; line-height: 100%">
-<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>VII.
-REGISTRO DAS A&Ccedil;&Otilde;ES E LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></font></font></p>
+<font color="#000000"><font face="Arial, sans-serif"><font size="2" style="font-size: 10pt"><b>VI.
+LI&Ccedil;&Otilde;ES APRENDIDAS</b></font></font></font></p>
 <p align="left" style="margin-top: 0.05cm; margin-bottom: 0.05cm; font-style: normal; line-height: 100%">
 <br/>
 <br/>
